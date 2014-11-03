@@ -1,0 +1,68 @@
+extends layout
+
+block content
+        .row.hypermasher-main
+            .col-md-10
+                h2 About Hypermasher
+                p.
+                    Hypermasher is a continuous stream of the latest #[a(href="http://blog.instagram.com/post/95829278497/hyperlapse-from-instagram") Hyperlapse] videos on Instagram set to your choice of music from #[a(href="https://soundcloud.com/") SoundCloud]. 
+                p. 
+                    It was created by Andrew T. Baker #[a(href="http://andrewtorkbaker.com/funemployment") during his funemployment]. Andrew is a software developer based in Washington, DC who is taking time off between jobs to pursue his own technical interests. You can keep up with Andrew on #[a(href="https://twitter.com/andrewtorkbaker") Twitter] or #[a(href="http://andrewtorkbaker.com/") his blog].
+                p.
+                    Andrew is very grateful for all the advice and Instagram expertise that #[a(href="http://instagram.com/caldwelllauren") caldwelllauren] brought to the project.
+
+                h2 Frequently Asked Questions
+                h4 Which videos appear on Hypermasher?
+                p.
+                    Hypermasher uses the #[a(href="http://instagram.com/developer") Instagram API] to pull in every video that is posted with the hashtag #[strong #hyperlapse].
+                p.
+                    Hypermasher always tries to show you the latest videos posted on Instagram, but sometimes there aren't enough new ones available. In that case, Hypermasher will mix in a few (slightly) older videos to keep the stream going.
+
+                h4 How can I get my videos on Hypermasher?
+                p.
+                    To see your video on Hypermasher, post a video with the hashtag #[strong #hyperlapse] to your public Instagram account. You can also add the #[strong #hyperlapse] hashtag to an existing video. 
+                p.
+                    You will likely see your video on the stream about 15 minutes after you post it. The time varies based on how many other people are posting #[strong #hyperlapse] videos.
+
+                h4 What's the music playing in the background? It's awesome!
+                p.
+                    The default playlist on Hypermasher features the artist #[a(href="http://tychomusic.com/") Tycho]. Tycho is one of my favorite musicians, and his music's vibe is perfect for watching Hyperlapses.
+
+                h4 Can I watch Hypermasher with my own music?
+                p.
+                    Yes! Just click the big blue button on the left side of the screen. Find a link to any track, set, playlist, or artist on #[a(href="https://soundcloud.com/") SoundCloud] and paste it in the text box. 
+                p.
+                    You will receive a new link that will tell Hypermasher to use your music instead. If you think you found a good mashup, tell me about it on Twitter! I'm #[a(href="https://twitter.com/andrewtorkbaker") @andrewtorkbaker].
+
+                h4 Can I watch Hypermasher fullscreen?
+                p.
+                    Not right now, but that may be a feature that comes in version 2.0.
+
+                p.
+                    Rest assured, however, that the videos are being shown at their original resolution - you aren't missing any quality keeping them in your browser window.
+
+                h4 Why do some videos have white backgrounds or other weird backgrounds?
+                p.
+                    Some Instagram users edit their videos after they shoot them to make them appear this way. The white backgrounds help these videos look natural in Instagram's news feeds, but they unfortunately clash with the theater vibe of Hypermasher.
+
+                h4 Will Hypermasher work on my mobile device?
+                p.
+                    Probably not. Hypermasher relies on relatively new conventions on the web that aren't supported by all devices yet. Furthermore, Apple does not allow videos to automatically play on any of its devices.
+
+                h4 Will Hypermasher work on my Chromecast?
+                p.
+                    #[strong YES!] I did it often while I was building Hypermasher - highly recommended.
+
+                h4 Andrew, I see you are a software nerd. I, too, am a software nerd. May I inquire about the technical details of your project?
+                p.
+                    Hmmm. I'm not sure I believe you. What's the secret code?
+
+                h4 Rm9yd2hlbklzZWV0aGVleGNlcHRpb250aHJvdw0KSXBhc3RlaXRvblN0YWNrT3ZlcmZsb3c=
+                p.
+                    Well met, comrade! I built Hypermasher to help me learn #[a(href="http://nodejs.org/") Node.js] - specifically, I used the #[a(href="http://expressjs.com/") Express framework]. I use #[a(href="http://redis.io/") redis] to store video metadata and cache a couple responses.
+                p.
+                    Hypermasher consumes the Instagram API and prepares the video metadata on the server. Everything else happens in the user's browser. I found the #[a(href="https://developers.soundcloud.com/") SoundCloud Widget API] particularly versatile and easy to work with. I will definitely consider using it again.
+                p.
+                    Hypermasher is currently deployed on Heroku because I wanted to get it up and running quickly, but I'm a big #[a(href="https://docker.com/") Docker] fan and might consider hosting it with a Docker-specific service.
+                p.
+                    I also plan to open-source at least some components of Hypermasher, but since this is my first real Node.js project, I'm going to ask some friends to give it a technical review before I set it loose.

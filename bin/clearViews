@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+
+// Utility command to clear the homepage view cache
+
+var utils = require('../utils');
+
+utils.clearViews(function() {
+    console.log("View caches cleared");
+    process.exit(0);
+});

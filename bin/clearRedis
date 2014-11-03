@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+
+// Utility command to clear the redis database
+
+var utils = require('../utils');
+
+utils.clearRedis(function() {
+    console.log("Redis cleared");
+    process.exit(0);
+});
