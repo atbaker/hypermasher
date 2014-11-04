@@ -1,0 +1,13 @@
+#!/usr/bin/env node
+
+// Utility command to manually fetch recent videos from the Instagram API
+
+var utils = require('../utils');
+
+utils.getVideos(function(error, videos) {
+    if (error)
+        console.error(error);
+    else
+        console.log(videos + " videos primed");
+    process.exit(0);
+});

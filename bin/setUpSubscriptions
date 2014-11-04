@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+
+// Utility command to establish Instagram API subscription for hyperlapse hashtag
+
+var utils = require('../utils');
+
+utils.setUpSubscriptions(function() {
+    console.log("Subscriptions created");
+    process.exit(0);
+});

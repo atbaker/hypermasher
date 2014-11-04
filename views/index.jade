@@ -1,0 +1,105 @@
+extends layout
+
+block page_css
+    link(href="//vjs.zencdn.net/4.8/video-js.css" rel="stylesheet")
+
+block page_js
+    script(type="text/javascript").
+        var userAgent = navigator.userAgent;
+        if (userAgent.match(/iPhone/i) || userAgent.match(/iPad/i) || userAgent.match(/iPod/i))
+            window.location = "/ios";
+        else if (userAgent.match(/MSIE/i))
+            window.location = "/incompatible-browser";
+
+    script(src="//vjs.zencdn.net/4.8/video.js")
+    script(src="https://w.soundcloud.com/player/api.js")
+    script(src="http://d3js.org/d3.v3.min.js", charset="utf-8")
+    script(src="http://d3js.org/topojson.v1.min.js")
+    script(src="/javascripts/datamaps.all.min.js")
+    script(src="/javascripts/hypermasher-utils.js")
+    script(src="/javascripts/hypermasher.js")
+
+block content
+    #soundcloudForm.modal.fade
+        .modal-dialog
+            .modal-content
+              .modal-header
+                button.close(type='button', data-dismiss='modal')
+                  span(aria-hidden='true') ×
+                  span.sr-only Close
+                h4.modal-title Choose your own music
+              .modal-body
+                p. 
+                    Hypermasher can play any music available on #[a(href="http://soundcloud.com/") SoundCloud]. To use your own music, find an artist, set, or playlist on SoundCloud and then paste its URL here.
+
+                form(role="form")
+                    h5 SoundCloud URL
+                    input#soundcloudUrl(type="text" class="form-control" placeholder="Paste your SoundCloud URL here")
+
+                    h5 Your Hypermasher link
+                    input#hypermasherLink(type="text" class="form-control", onclick="this.select()")
+
+                p.
+                    You can now copy and share that second link ... #[a#hypermasherLinkShortcut(href="#") or check it out now!]
+
+    .row.hypermasher-main
+        .col-md-4#hypermasher-sidebar
+            .row
+                .col-md-12
+                    #widgetHolder.center-block
+            .row
+                .col-md-12
+                    h4 Controls
+            .row
+                .col-md-12
+                    .btn-group.btn-group-justified.hypermasher-controls
+                        .btn-group.btn-group-sm
+                            button.btn.btn-default.hypermasher-rewind(onclick="rewind(5)", disabled="disabled") #[span.glyphicon.glyphicon-fast-backward] 5
+                        .btn-group.btn-group-sm
+                            button.btn.btn-default.hypermasher-rewind(onclick="rewind(1)", disabled="disabled") #[span.glyphicon.glyphicon-step-backward] 1
+                        .btn-group.btn-group-sm
+                            button.btn.btn-default(onclick="playAll()") #[span.glyphicon.glyphicon-play]
+                        .btn-group.btn-group-sm
+                            button.btn.btn-default(onclick="pauseAll()") #[span.glyphicon.glyphicon-pause]
+                        .btn-group.btn-group-sm
+                            button.btn.btn-default(onclick="switchVideo()") #[span.glyphicon.glyphicon-step-forward] 1
+                        .btn-group.btn-group-sm
+                            button.btn.btn-default(onclick="toggleFullscreen()") #[span.glyphicon.glyphicon-fullscreen]
+            .row
+                .col-md-12
+                    button.btn.btn-default.btn-block(data-toggle="modal", data-target="#soundcloudForm") Choose your own music
+            .row
+                .col-md-12
+                    .metadata-controls.pull-left
+                        a#metadata-show(href="#", style="display: none") show details
+                        a#metadata-hide(href="#") hide details
+                    #metadata-holder
+                        #example_video_1_metadata.video-metadata
+                            .metadata-user.text-right
+                            .metadata-location.text-right
+                            .metadata-time.text-right
+                            .metadata-link.text-right
+                                a(href="#", target="_blank") view on Instagram.com
+                        #example_video_2_metadata.video-metadata(style="display: none")
+                            .metadata-user.text-right
+                            .metadata-location.text-right
+                            .metadata-time.text-right
+                            .metadata-link.text-right
+                                a(href="#", target="_blank") view on Instagram.com
+                        .map
+
+        .col-md-8
+            .hypermasher-video
+                | <video id="example_video_1" class="video-js vjs-default-skin center-block"
+                |   preload="auto" width="auto" height="auto" controls muted
+                |   >
+                |   <source type="video/mp4" src=""/>
+                |   <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+                | </video>
+            .hypermasher-video.center-block(style="display: none")
+                | <video id="example_video_2" class="video-js vjs-default-skin center-block"
+                |   preload="auto" width="auto" height="auto" controls muted
+                |   >
+                |   <source type="video/mp4" src=""/>
+                |   <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+                | </video>
