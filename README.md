@@ -61,6 +61,12 @@ You're now running Hypermasher locally, but we haven't fetched any videos from I
 
 You should see a result like `33 videos primed`. Now refresh your browser - you should see the first video loaded and ready to play. Hit any play button on the screen to start Hypermasher.
 
+### Running in production ###
+
+When running in production (`export NODE_ENV=production`), Hypermasher caches the rendered template for the /hyperlapse route to speed up response time.
+
+After a deployment, you can clear that template cache by running the executable found at `bin/clearViews`.
+
 Testing
 -------
 
