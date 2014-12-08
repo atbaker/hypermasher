@@ -2,7 +2,7 @@ Hypermasher
 ===========
 
 <p align="center">
-    <img src="/Users/atbaker/repos/atbaker/hypermasher/hypermasher-preview.gif" alt="Hypermasher preview" title="Hypermasher" style="max-width:100%;">
+    <img src="hypermasher-preview.gif" alt="Hypermasher preview" title="Hypermasher" style="max-width:100%;">
 </p>
 
 Hypermasher is a [Node.js](http://nodejs.org/) application which shows users a stream of the latest [Hyperlapse](http://blog.instagram.com/post/95829278497/hyperlapse-from-instagram) videos set to chill music.
