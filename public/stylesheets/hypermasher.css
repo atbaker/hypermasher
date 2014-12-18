@@ -11,6 +11,10 @@ body {
     color: #AAAAAA;
 }
 
+.hypermasher-main .btn-success, a {
+    color: #FFFFFF;
+}
+
 .hypermasher-navbar {
     background-color: #111;
     border-bottom: 0;
