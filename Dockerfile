@@ -1,4 +1,4 @@
-FROM node:0.10.32-onbuild
+FROM node:0.10-onbuild
 
 ENV PORT 80
 
