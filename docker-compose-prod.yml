@@ -1,0 +1,18 @@
+# Docker-compose production configuration file for Hypermasher
+
+node:
+  image: atbaker/hypermasher
+  ports:
+    - "80:80"
+  links:
+    - redis
+  env_file:
+    - .env
+  environment:
+    - NODE_ENV=production
+  volumes:
+    - .:/usr/src/app
+
+redis:
+  image: redis
+  command: redis-server --maxmemory "128mb" --maxmemory-policy "allkeys-lru"

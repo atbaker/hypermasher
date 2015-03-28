@@ -1,0 +1,16 @@
+# Docker-compose configuration file for Hypermasher
+
+node:
+  build: .
+  ports:
+    - "8000:80"
+  links:
+    - redis
+  env_file:
+    - .env
+  volumes:
+    - .:/usr/src/app
+
+redis:
+  image: redis
+  command: redis-server --maxmemory "128mb" --maxmemory-policy "allkeys-lru"
