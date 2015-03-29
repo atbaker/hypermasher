@@ -10,8 +10,6 @@ node:
     - .env
   environment:
     - NODE_ENV=production
-  volumes:
-    - .:/usr/src/app
 
 redis:
   image: redis
