@@ -9,6 +9,10 @@ Hypermasher is a [Node.js](http://nodejs.org/) application which shows users a s
 
 It was created by [Andrew T. Baker](http://andrewtorkbaker.com/) as part of his [funemployment](http://andrewtorkbaker.com/funemployment). It is open source under the [Apache 2.0 license](http://www.apache.org/licenses/LICENSE-2.0.html).
 
+## Video
+
+Hypermasher inspired Hyperlax, and both apps were featured in the very first episode of [Rate My App](http://ratemyapp.com).  You can [watch the video here](http://ratemyapp.com/video/6K_HgG_Xmf8/Walkthrough-Two-new-apps-play-realtime-hyperlapse-videos-to-music).
+
 Getting started
 ---------------
 
