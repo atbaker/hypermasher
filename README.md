@@ -5,6 +5,9 @@ Hypermasher
     <img src="hypermasher-preview.gif" alt="Hypermasher preview" title="Hypermasher" style="max-width:100%;">
 </p>
 
+**NOTE:** I no longer maintain this repository. I also believe the Instagram API it used has been deprecated. Further, I
+no longer own hypermasher.com and I am not responsible for the content there today.
+
 Hypermasher is a [Node.js](http://nodejs.org/) application which shows users a stream of the latest [Hyperlapse](http://blog.instagram.com/post/95829278497/hyperlapse-from-instagram) videos set to chill music.
 
 It was created by [Andrew T. Baker](http://andrewtorkbaker.com/) as part of his [funemployment](http://andrewtorkbaker.com/funemployment). It is open source under the [Apache 2.0 license](http://www.apache.org/licenses/LICENSE-2.0.html).
